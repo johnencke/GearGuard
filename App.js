@@ -5,8 +5,8 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-        	Hi Andy
+        <Text style ={styles.text}>
+        	Gear Guard
         </Text>
       </View>
     );
@@ -19,5 +19,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    fontSize: 69.420
   },
 });
