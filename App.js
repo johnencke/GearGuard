@@ -24,6 +24,7 @@ export default class App extends Component {
 
     let location = await Location.getCurrentPositionAsync({});
     this.setState({ locationResult: JSON.stringify(location) });
+    this.setState({ mapRegion: { latitude: location["coords"]["latitude"], longitude: location["coords"]["longitude"], latitudeDelta: this.state.mapRegion.latitudeDelta, longitudeDelta: this.state.mapRegion.longitudeDelta }});
   };
 
   _handleTextChange = inputValue => {
@@ -48,7 +49,7 @@ export default class App extends Component {
         <Button title="Press me" onPress={this._handleButtonPress} />
 
         <MapView
-          style={{ alignSelf: 'stretch', height: 200 }}
+          style={{ alignSelf: 'stretch', height: 400 }}
           region={this.state.mapRegion}
           onRegionChange={this._handleMapRegionChange}
         />
