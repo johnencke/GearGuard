@@ -10,7 +10,7 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    this._getLocationAsync();
+    //this._getLocationAsync();
     
   }
 
@@ -27,12 +27,13 @@ export default class App extends Component {
     this.setState({ mapRegion: { latitude: location["coords"]["latitude"], longitude: location["coords"]["longitude"], latitudeDelta: this.state.mapRegion.latitudeDelta, longitudeDelta: this.state.mapRegion.longitudeDelta }});
   };
 
+
   _handleTextChange = inputValue => {
     this.setState({ inputValue });
   };
 
   _handleButtonPress = () => {
-    Alert.alert(this.state.locationResult);
+    this.setState({ mapRegion: { latitude: location["coords"]["latitude"], longitude: location["coords"]["longitude"], latitudeDelta: this.state.mapRegion.latitudeDelta, longitudeDelta: this.state.mapRegion.longitudeDelta }});
   };
 
   _handleMapRegionChange = mapRegion => {
@@ -46,7 +47,7 @@ export default class App extends Component {
           Gear Guard
         </Text>
 
-        <Button title="Press me" onPress={this._handleButtonPress} />
+        <Button title="Press me" onPress={this._getLocationAsync} />
 
         <MapView
           style={{ alignSelf: 'stretch', height: 400 }}
