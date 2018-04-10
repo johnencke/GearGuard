@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
@@ -14,27 +8,30 @@ import {
   Alert,
 } from 'react-native';
 
-
 type Props = {};
 export default class App extends Component<Props> {
 
- _handleButtonPress = () => {
+    _handleButtonPress = () => {
     Alert.alert(
       'Button pressed!',
       'You did it!',
-    );
-  };
-  
+        );
+    };
+
+
   render() {
     return (
       <View style={styles.container}>
+
         <Text style={styles.header}>
           Gear Guard
         </Text>
+
         <Button
           title="Press me"
           onPress={this._handleButtonPress}
         />
+
       </View>
     );
   }
