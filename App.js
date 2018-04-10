@@ -9,22 +9,32 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  Alert,
 } from 'react-native';
 
 
 type Props = {};
 export default class App extends Component<Props> {
+
+ _handleButtonPress = () => {
+    Alert.alert(
+      'Button pressed!',
+      'You did it!',
+    );
+  };
+  
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.header}>
           Gear Guard
         </Text>
-
-        <Text style={styles.instructions}>
-          Press Here
-        </Text>
+        <Button
+          title="Press me"
+          onPress={this._handleButtonPress}
+        />
       </View>
     );
   }
