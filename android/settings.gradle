@@ -1,0 +1,3 @@
+rootProject.name = 'GearGuard'
+
+include ':app'
